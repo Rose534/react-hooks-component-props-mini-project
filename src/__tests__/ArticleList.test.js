@@ -32,3 +32,13 @@ test("renders a Article component for each post passed as a prop", () => {
   const { container } = render(<ArticleList posts={posts} />);
   expect(container.querySelector("main").children).toHaveLength(3);
 });
+
+function Article(props) {
+  return (
+    <article>
+      <h3>{props.title}</h3>
+      <small>{props.date || "January 1, 1970"}</small>
+      <p>{props.preview}</p>
+    </article>
+  );
+}
